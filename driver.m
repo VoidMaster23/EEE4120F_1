@@ -2,6 +2,8 @@
 tic;
 white = createwhite(10);
 runtime = toc();
+audiowrite('w.wav', white, 8000, 'BitsPerSample', 16);
+[wave, fs] = audioread('w.wav');
 disp(strcat("white took: ", num2str(runtime*1000), " ms to run"));
 
 #1.2.2 Create white_n i.e. for loop version and 1.2.4 Time Execution
@@ -13,9 +15,12 @@ audiowrite('w2.wav', white, 8000, 'BitsPerSample', 16);
 
 #1.2.3 Visual Confirmation of uniform distribution
 hist(whiten, 100, 1);
-xlabel('n')
-ylabel('x[n]')
-title('Whiten')
+xl = xlabel('n');
+yl = ylabel('x[n]');
+tl = title('Whiten');
+set (tl, "fontsize", 16);
+set (yl, "fontsize", 16);
+set (xl, "fontsize", 16);
 
 #1.2.4 Display Speedup
 su = speedup(runtime, runtime2);
