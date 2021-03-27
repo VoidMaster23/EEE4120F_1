@@ -13,6 +13,9 @@ audiowrite('w2.wav', white, 8000, 'BitsPerSample', 16);
 
 #1.2.3 Visual Confirmation of uniform distribution
 hist(whiten, 100, 1);
+xlabel('n')
+ylabel('x[n]')
+title('Whiten')
 
 #1.2.4 Display Speedup
 su = speedup(runtime, runtime2);
