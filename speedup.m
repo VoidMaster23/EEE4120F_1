@@ -1,3 +1,3 @@
-function speedup = getSpeedUp(t1,t2)
-  speedup = t1/t2;
+function getSpeedup = speedup(t1,t2)
+  getSpeedup = t1/t2;
  endfunction
